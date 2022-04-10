@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .eye{
+    width: 200px;
+    height: 200px;
+    background: black;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px 10px #333;
+    position: relative;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+.container .eye:after{
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: black;
+    position: absolute;
+    top: 38%;
+    left: 38%;
+    z-index: 10;
+}
+.container .eye .one,.two,.three{
+    width: 138px;
+    height: 138px;
+    border-radius: 100% 0px;
+    border: 2px black solid;
+    background: #b10a0a;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    opacity: .8;
+}
+.container .eye .one{
+    transform: translate(-50%,-50%);
+}
+.container .eye .two{
+    transform: translate(-50%,-50%) rotate(60deg);
+}
+.container .eye .three{
+    transform: translate(-50%,-50%) rotate(120deg);
+}
+@keyframes rotate{
+    from{}
+    to{
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <!-- <link rel="stylesheet" href="../css/2.绘制心形.css"> -->
+    <style>
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .heart {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transform: rotate(45deg) scale(0);
+        animation-name: heart;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        position: absolute;
+      }
+      .heart::before {
+        content: "";
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 100%;
+        transform: translateX(-100px);
+        position: absolute;
+      }
+      .heart::after {
+        content: "";
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 100%;
+        transform: translateY(-100px);
+        position: absolute;
+      }
+      @keyframes heart {
+        to {
+          transform: rotate(45deg) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart"></div>
+  </body>
+</html>
